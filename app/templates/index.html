@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block title %} {{ data.titulo }} {% endblock %}
+
+{% block body %}
+    <!-- mostrar datos enviados -->
+    <h1>{{ data.bienvenida }}</h1>
+    <!-- pondremos un if para ver si hay cursos o no -->
+    {% if data.numero_cursos >0 %}
+        <!-- hacemos un for para mostrar todos los cursos -->
+        <ul>
+            {% for c in data.cursos %}
+                <li>{{ c }}</li>
+            <!-- se tiene que cerrar el for  -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No existen cursos ...</h2>
+    <!-- se tiene que cerrar el if  -->
+    {% endif %}
+{% endblock %}
